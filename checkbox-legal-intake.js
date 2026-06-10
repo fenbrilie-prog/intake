@@ -8,21 +8,6 @@
  * tabbed showcase, problem-section toggle, FAQ, and other interactions.
  */
 
-
-/* ===================== script block 1 ===================== */
-    (function () {
-      var form = document.querySelector('[data-cbx-r-demo-form]');
-      if (!form) return;
-      var submit = form.querySelector('input[type="submit"]');
-      var thanks = form.querySelector('[data-cbx-r-demo-thanks]');
-      if (submit) submit.addEventListener('click', function (e) {
-        e.preventDefault();
-        if (thanks) thanks.hidden = false;
-      });
-    })();
-  
-
-/* ===================== script block 2 ===================== */
 /*!
  * Checkbox — Legal Intake landing page
  *
@@ -516,11 +501,11 @@
       reqText: '<b>Email</b> &middot; &ldquo;Do I need an NDA for this vendor?&rdquo;',
       outcome: 'resolved',
       badge: { cls: 'cbx-r__fd-ob--resolved', icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.4 2.4 4.6-5"/></svg>', label: 'Resolved automatically' },
-      payoffText: '<b>Resolved automatically.</b> Answered from approved policy and logged, with no lawyer involved.',
+      payoffText: '<b>Resolved automatically.</b> An approved answer is returned instantly and recorded, without creating legal work.',
       steps: [
         { ic: 'email', title: 'Email received', desc: 'The email hits the Legal Front Door, caught from Outlook. No shared inbox, no lost thread.' },
         { ic: 'triage', title: 'AI understands the intent', desc: 'Checkbox reads the request and recognises a standard policy question, low risk.' },
-        { ic: 'search', title: 'AI checks approved policy', desc: 'It answers from your approved policies and clause library, not the open internet.' },
+        { ic: 'search', title: 'Approved guidance found', desc: 'It answers from your approved policies and clause library, not the open internet.' },
         { ic: 'aichat', title: 'Answer returned automatically', desc: 'The requester gets a clear, sourced answer in seconds, no lawyer involved.' },
         { ic: 'resolved', title: 'Logged and reported', desc: 'Closed and captured in the audit trail, visible in reporting.',  isOutcome: true }
       ]
@@ -530,11 +515,11 @@
       reqText: '<b>Slack</b> &middot; &ldquo;Need legal review on this supplier agreement&rdquo;',
       outcome: 'matter',
       badge: { cls: 'cbx-r__fd-ob--matter', icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>', label: 'Matter created' },
-      payoffText: '<b>Matter created.</b> Opened automatically, assigned to legal, and tracked to completion.',
+      payoffText: '<b>Matter created automatically.</b> The request is routed, assigned, and tracked without manual intake.',
       steps: [
         { ic: 'slack', title: 'Slack message arrives', desc: 'The Slack message hits the Legal Front Door instead of a lawyer&rsquo;s DMs.' },
-        { ic: 'triage', title: 'AI categorises the request', desc: 'Checkbox classifies it: a supplier agreement that needs real legal review.' },
-        { ic: 'capture', title: 'Intake captured', desc: 'All the context is captured as structured intake, nothing re&#8209;keyed.' },
+        { ic: 'triage', title: 'Request type identified', desc: 'Checkbox classifies it: a supplier agreement that needs real legal review.' },
+        { ic: 'capture', title: 'Information captured', desc: 'All the context is captured as structured intake, nothing re&#8209;keyed.' },
         { ic: 'handoff', title: 'Matter created automatically', desc: 'Checkbox opens the matter: type, folders, owner, and security profile all set.' },
         { ic: 'lawyer', title: 'Assigned to legal', desc: 'Routed to the right lawyer with full context, ready to action.' },
         { ic: 'matter', title: 'Tracked to completion', desc: 'A structured matter, tracked end to end and reported on.',  isOutcome: true }
@@ -545,12 +530,12 @@
       reqText: '<b>Microsoft Teams</b> &middot; &ldquo;Can marketing use this customer logo?&rdquo;',
       outcome: 'workflow',
       badge: { cls: 'cbx-r__fd-ob--workflow', icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 4 14 11 14 10 22 20 9 13 9 13 2"/></svg>', label: 'Workflow automated' },
-      payoffText: '<b>Workflow automated.</b> Routed, approved, and logged without a lawyer drafting from scratch.',
+      payoffText: '<b>Workflow automated.</b> The request follows the approved process from start to finish without manual coordination.',
       steps: [
         { ic: 'teams', title: 'Teams message arrives', desc: 'The Teams message hits the Legal Front Door where the work already happens.' },
-        { ic: 'triage', title: 'AI identifies the request type', desc: 'Checkbox recognises a brand and marketing approval, a known workflow.' },
-        { ic: 'route', title: 'Routes to the right workflow', desc: 'It kicks off the matching approval workflow automatically.' },
-        { ic: 'check', title: 'Approval completed', desc: 'The workflow runs its steps and completes, no lawyer drafting from scratch.' },
+        { ic: 'triage', title: 'Request type identified', desc: 'Checkbox recognises a brand and marketing approval, a known workflow.' },
+        { ic: 'route', title: 'Routed to the correct workflow', desc: 'It kicks off the matching approval workflow automatically.' },
+        { ic: 'check', title: 'Approval collected automatically', desc: 'The workflow runs its steps and completes, no lawyer drafting from scratch.' },
         { ic: 'resolved', title: 'Logged and reported', desc: 'Captured in the audit trail and visible in reporting.',  isOutcome: true }
       ]
     },
@@ -559,13 +544,13 @@
       reqText: '<b>Forms</b> &middot; &ldquo;New vendor onboarding request&rdquo;',
       outcome: 'matter',
       badge: { cls: 'cbx-r__fd-ob--matter', icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>', label: 'Matter created' },
-      payoffText: '<b>Matter created.</b> Validated, opened, assigned, and tracked straight from the form.',
+      payoffText: '<b>Matter created automatically.</b> Everything needed is captured upfront so work can begin immediately.',
       steps: [
         { ic: 'forms', title: 'Form submitted', desc: 'A request comes in through a branded intake form, structured from the start.' },
-        { ic: 'check', title: 'AI validates the information', desc: 'Checkbox checks the submission is complete and routes it correctly.' },
-        { ic: 'handoff', title: 'Matter created', desc: 'A matter opens automatically with the form data attached.' },
-        { ic: 'lawyer', title: 'Assigned', desc: 'Routed to the right owner, ready to action.' },
-        { ic: 'matter', title: 'Tracked', desc: 'A structured matter, tracked to completion and reported on.',  isOutcome: true }
+        { ic: 'check', title: 'Information validated', desc: 'Checkbox checks the submission is complete and routes it correctly.' },
+        { ic: 'handoff', title: 'Matter created automatically', desc: 'A matter opens automatically with the form data attached.' },
+        { ic: 'lawyer', title: 'Assigned to owner', desc: 'Routed to the right owner, ready to action.' },
+        { ic: 'matter', title: 'Tracked to completion', desc: 'A structured matter, tracked to completion and reported on.',  isOutcome: true }
       ]
     },
     aichat: {
@@ -573,10 +558,10 @@
       reqText: '<b>AI Chatbot</b> &middot; &ldquo;What&rsquo;s our signing authority policy?&rdquo;',
       outcome: 'ai',
       badge: { cls: 'cbx-r__fd-ob--ai', icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 4.8L18.5 9l-4.9 1.2L12 15l-1.6-4.8L5.5 9l4.9-1.2z"/></svg>', label: 'Answered by AI' },
-      payoffText: '<b>Answered by AI.</b> Pulled from your approved knowledge and logged instantly.',
+      payoffText: '<b>Answered instantly.</b> Employees get trusted answers without creating work for legal.',
       steps: [
         { ic: 'aichat', title: 'Question asked', desc: 'An employee asks the assistant a policy question in plain language.' },
-        { ic: 'search', title: 'AI searches approved knowledge', desc: 'Checkbox searches your approved policies and playbooks, not the open web.' },
+        { ic: 'search', title: 'AI finds approved guidance', desc: 'Checkbox searches your approved policies and playbooks, not the open web.' },
         { ic: 'aichat', title: 'Instant answer returned', desc: 'A clear, sourced answer comes back in seconds.' },
         { ic: 'resolved', title: 'Logged', desc: 'Captured in the audit trail, so legal keeps full visibility.',  isOutcome: true }
       ]
@@ -585,13 +570,13 @@
       tile: 'cbx-r__fd-tile--door', tileIcon: IC.door,
       reqText: '<b>Legal Front Door</b> &middot; one way in for every request',
       outcome: 'matter',
-      badge: { cls: 'cbx-r__fd-ob--matter', icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21V4a1 1 0 0 1 1-1h7l4 4v14"/></svg>', label: 'One front door for everything' },
-      payoffText: '<b>One front door for everything.</b> However a request arrives, it is captured, triaged, and tracked in one place, with full visibility for the GC.',
+      badge: { cls: 'cbx-r__fd-ob--matter', icon: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21V4a1 1 0 0 1 1-1h7l4 4v14"/></svg>', label: 'One front door for legal' },
+      payoffText: '<b>One front door for legal.</b> However work arrives, it is captured, triaged, routed, and tracked consistently, giving legal complete visibility into demand.',
       steps: [
-        { ic: 'funnel', title: 'Every channel, one way in', desc: 'Email, Slack, Teams, forms, and the AI assistant all feed the same front door. The business never hunts for the right lawyer or inbox.' },
-        { ic: 'capture', title: 'Captured as structured intake', desc: 'Each request arrives with the context legal needs, captured once and never re&#8209;keyed.' },
-        { ic: 'triage', title: 'AI triages every request', desc: 'Checkbox reads the intent, type, and urgency, then decides the right path for each one.' },
-        { ic: 'route', title: 'Resolved, routed, or made a matter', desc: 'Routine asks are answered instantly. The rest open as structured matters, routed to the right owner.' },
+        { ic: 'funnel', title: 'Every request, one intake process', desc: 'Email, Slack, Teams, forms, and AI all flow through the same intake layer, giving legal one place to manage demand.' },
+        { ic: 'capture', title: 'Captured consistently', desc: 'Each request arrives with the context legal needs, captured once and never re&#8209;keyed.' },
+        { ic: 'triage', title: 'Triaged automatically', desc: 'Checkbox reads the intent, type, and urgency, then decides the right path for each one.' },
+        { ic: 'route', title: 'Resolved, routed, or escalated', desc: 'Routine asks are answered instantly. The rest open as structured matters, routed to the right owner.' },
         { ic: 'resolved', title: 'Tracked and reported', desc: 'Everything is logged, tracked to completion, and visible to the GC in real time.',  isOutcome: true }
       ]
     }
@@ -726,7 +711,16 @@
 
   // ----- Events -----
   cards.forEach(function (c) {
-    c.addEventListener('click', function () { selectPath(c.getAttribute('data-cbx-r-fd-card')); });
+    c.addEventListener('click', function () {
+      selectPath(c.getAttribute('data-cbx-r-fd-card'));
+      // On mobile the player stacks below a tall channel list, so the update is off-screen.
+      // Bring the journey into view so the selected channel's flow is visible.
+      if (journey && window.matchMedia('(max-width: 879.98px)').matches) {
+        var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var y  = journey.getBoundingClientRect().top + window.pageYOffset - 72;
+        window.scrollTo({ top: y < 0 ? 0 : y, behavior: rm ? 'auto' : 'smooth' });
+      }
+    });
   });
 
   playBtn.addEventListener('click', function () {
@@ -779,6 +773,7 @@
   var label  = btn.querySelector('.cbx-r__pb-switch-label');
   var h3     = sec.querySelector('.cbx-r__pb-banner-h3');
   var p      = sec.querySelector('.cbx-r__pb-banner-p');
+  var bic    = sec.querySelector('.cbx-r__pb-door');
   var stage  = sec.querySelector('.cbx-r__pb-stage');
   var flow   = sec.querySelector('.cbx-r__pb-flow');
   var door   = sec.querySelector('.cbx-r__pb-door-card');
@@ -791,8 +786,8 @@
 
   var TXT = {
     problem: {
-      h3: 'Different tools. Same outcome:<span>Legal has no front door.</span>',
-      p: 'Checkbox creates one front door for every request, so nothing gets missed and legal stays in control.',
+      h3: 'Different channels. Same problem:<span>Legal has no front door.</span>',
+      p: 'Requests are scattered across systems, lawyers become the routing layer, and leadership loses visibility into incoming work.',
       label: 'See the better way'
     },
     solution: {
@@ -800,6 +795,12 @@
       p: 'Every request is captured, triaged, and routed automatically, so nothing slips and legal stays in control.',
       label: 'Show the problem'
     }
+  };
+
+  /* banner icon tracks the state: scattered inbound (problem) vs one door (solution) */
+  var BIC = {
+    problem: '<svg viewBox="0 0 24 24" width="52" height="52" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M12 3V8.5"/><path d="M9.6 6.1 12 8.5 14.4 6.1"/><path d="M21 12H15.5"/><path d="M18.1 9.6 15.5 12 18.1 14.4"/><path d="M12 21V15.5"/><path d="M9.6 17.9 12 15.5 14.4 17.9"/><path d="M3 12H8.5"/><path d="M5.9 9.6 8.5 12 5.9 14.4"/><path d="M12 12h.01"/></svg>',
+    solution: '<svg viewBox="0 0 24 24" width="52" height="52" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M2 20h3"/><path d="M14.5 20H22"/><path d="M14.5 3.5 5.5 5.2A1 1 0 0 0 4.7 6.2v12.6a1 1 0 0 0 .8 1l9 1.7a1 1 0 0 0 1.2-1V4.5a1 1 0 0 0-1.2-1z"/><path d="M11.5 12.2v.01"/></svg>'
   };
 
   function lerp(a, b, t) { return a + (b - a) * t; }
@@ -834,6 +835,7 @@
     if (label) label.textContent = TXT[mode].label;
     if (h3) h3.innerHTML = TXT[mode].h3;
     if (p) p.textContent = TXT[mode].p;
+    if (bic) bic.innerHTML = BIC[mode];
     clearTimeout(drawTimer);
     if (mode === 'solution') {
       drawTimer = setTimeout(function () {
@@ -846,8 +848,19 @@
     }
   }
 
+  if (bic) bic.innerHTML = BIC[sec.getAttribute('data-cbx-pb-mode')] || BIC.problem;
   btn.addEventListener('click', function () {
     set(sec.getAttribute('data-cbx-pb-mode') === 'solution' ? 'problem' : 'solution');
+    // On mobile the toggle sits below a tall diagram, so the change happens off-screen.
+    // Bring the top of the diagram into view so the user can see what changed.
+    if (window.matchMedia('(max-width: 760px)').matches) {
+      var stage = sec.querySelector('.cbx-r__pb-stage');
+      if (stage) {
+        var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var y  = stage.getBoundingClientRect().top + window.pageYOffset - 72;
+        window.scrollTo({ top: y < 0 ? 0 : y, behavior: rm ? 'auto' : 'smooth' });
+      }
+    }
   });
   window.addEventListener('resize', function () {
     clearTimeout(rzTimer);
@@ -855,7 +868,8 @@
   });
 })();
 
-/* ===================== script block 3 ===================== */
+
+
 /* ============================================================
    HERO — REQUEST TUNNEL (decorative)
    Builds the streaming field of legal-request cards (each tagged with
@@ -918,6 +932,10 @@
     { s: 0.60, z: 2, r: [18, 32], dur: [6.5, 9.0] }    // far
   ];
 
+  /* vertical spread of the card field; tightened on narrow containers so
+     foreground cards don't start below the frame and clip at the bottom */
+  var VFAC = 0.82;
+
   function rand(a, b) { return a + Math.random() * (b - a); }
 
   function makeItem(team, question, srcKey, urgency, tier) {
@@ -925,7 +943,7 @@
     var phi = Math.PI + (Math.random() * 2 - 1) * 1.45;     // left-biased approach toward the right VP
     var r0 = rand(d.r[0], d.r[1]);
     var dx0 = Math.cos(phi) * r0;                           // cqmin offset from the VP
-    var dy0 = Math.sin(phi) * r0 * 0.82;                    // gently flattened vertically
+    var dy0 = Math.sin(phi) * r0 * VFAC;                    // gently flattened vertically
     var dur = rand(d.dur[0], d.dur[1]);
     var delay = -rand(0.3, dur);
 
@@ -954,6 +972,8 @@
      question they asked, the channel it arrived through, and an urgency level. */
   function build() {
     if (!field) return;
+    var hw = root.getBoundingClientRect().width;
+    VFAC = (hw && hw < 460) ? 0.5 : 0.82;
     var items = [];
     var n = 0;
     for (var pass = 0; pass < 2; pass++) {
