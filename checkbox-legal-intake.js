@@ -857,8 +857,10 @@
       var stage = sec.querySelector('.cbx-r__pb-stage');
       if (stage) {
         var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        var y  = stage.getBoundingClientRect().top + window.pageYOffset - 72;
-        window.scrollTo({ top: y < 0 ? 0 : y, behavior: rm ? 'auto' : 'smooth' });
+        requestAnimationFrame(function () {
+          var y = stage.getBoundingClientRect().top + window.pageYOffset - 72;
+          window.scrollTo({ top: y < 0 ? 0 : y, behavior: rm ? 'auto' : 'smooth' });
+        });
       }
     }
   });
