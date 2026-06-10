@@ -7478,15 +7478,13 @@
   .cbx-r__pb[data-cbx-pb-mode="solution"] .cbx-r__pb-result--problem { opacity: 0; transform: translateY(-10px); pointer-events: none; }
   .cbx-r__pb[data-cbx-pb-mode="solution"] .cbx-r__pb-result--solution { opacity: 1; transform: none; }
 
-  /* stacked view: float the INACTIVE result card out of flow so the wrap hugs
-     the visible card. Without this both cards share one grid cell and the
-     shorter (problem) card stretches to match the taller (solution) one,
-     leaving dead space at the bottom. Auto-margins keep it centred so the
-     crossfade transform is unaffected. */
+  /* stacked view: hard-swap the result cards (no crossfade). Only the active
+     card is rendered, so the wrap fits it exactly (no dead space) and the
+     taller card can never overflow/overlap the button mid-transition. */
   @media (max-width: 979.98px) {
-    .cbx-r__pb-resultwrap > .cbx-r__pb-result--solution { position: absolute; left: 0; right: 0; top: 0; margin-left: auto; margin-right: auto; }
-    .cbx-r__pb[data-cbx-pb-mode="solution"] .cbx-r__pb-resultwrap > .cbx-r__pb-result--solution { position: relative; }
-    .cbx-r__pb[data-cbx-pb-mode="solution"] .cbx-r__pb-resultwrap > .cbx-r__pb-result--problem { position: absolute; left: 0; right: 0; top: 0; margin-left: auto; margin-right: auto; }
+    .cbx-r__pb-resultwrap > .cbx-r__pb-result { position: static; opacity: 1; transform: none; transition: none; }
+    .cbx-r__pb[data-cbx-pb-mode="problem"]  .cbx-r__pb-resultwrap > .cbx-r__pb-result--solution { display: none; }
+    .cbx-r__pb[data-cbx-pb-mode="solution"] .cbx-r__pb-resultwrap > .cbx-r__pb-result--problem  { display: none; }
   }
 
   /* the toggle button */
