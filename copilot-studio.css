@@ -96,7 +96,7 @@ html { scroll-behavior: smooth; }
      ============================================================ */
   .hero {
     background: var(--hero-grad);
-    padding: 90px 0 80px;
+    padding: 130px 0 80px;
     position: relative;
     overflow: hidden;
   }
@@ -776,7 +776,7 @@ html { scroll-behavior: smooth; }
   @media (max-width: 980px) {
     .container { padding: 0 24px; }
     .nav-links { display: none; }
-    .hero { padding: 60px 0; }
+    .hero { padding: 130px 0; }
     .hero h1 { font-size: 40px; }
     .hero .lede { font-size: 17px; }
     .beat, .verdict-section, .proof, .final-cta { padding: 60px 0; }
